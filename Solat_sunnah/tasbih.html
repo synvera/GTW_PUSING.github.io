@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Tasbih | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='sunnah_ghairu.html'">← Kembali</button>
+    </div>
+    <h2 class="text-center mb-4 fw-bold text-success">🕋 Shalat Tasbih</h2>
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        Shalat <b>Tasbih</b> adalah shalat sunnah empat rakaat yang di dalamnya terdapat bacaan tasbih sebanyak
+        <b>300 kali</b>. Rasulullah ﷺ sangat menganjurkan umatnya untuk melakukannya,
+        karena keutamaannya yang besar dalam menghapus dosa dan mendekatkan diri kepada Allah ﷻ.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <ul>
+        <li>Dapat dilakukan pada siang atau malam hari</li>
+        <li>Sebaiknya dilakukan sendirian dan dengan khusyuk</li>
+        <li>Tidak dilakukan pada waktu-waktu yang dilarang untuk shalat</li>
+      </ul>
+
+      <h4 class="text-success mt-3">📿 Jumlah Rakaat</h4>
+      <p>
+        Shalat Tasbih dikerjakan sebanyak <b>4 rakaat</b>, dengan satu kali salam (boleh juga dua salam, setiap dua rakaat).
+      </p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Tasbih</h4>
+      <p class="arabic text-center">أُصَلِّي سُنَّةَ التَّسْبِيحِ أَرْبَعَ رَكَعَاتٍ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnatat-tasbīḥi arba‘a raka‘ātin lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat shalat sunnah Tasbih empat rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">📖 Tata Cara Shalat Tasbih</h4>
+      <ol>
+        <li>Setiap rakaat membaca <b>15 kali</b> tasbih setelah membaca doa iftitah.</li>
+        <li>Setelah membaca Al-Fatihah dan surah, membaca <b>10 kali</b> tasbih.</li>
+        <li>Dalam rukuk, membaca <b>10 kali</b> tasbih.</li>
+        <li>Setelah i‘tidal, membaca <b>10 kali</b> tasbih.</li>
+        <li>Dalam sujud pertama, membaca <b>10 kali</b> tasbih.</li>
+        <li>Setelah duduk di antara dua sujud, membaca <b>10 kali</b> tasbih.</li>
+        <li>Dalam sujud kedua, membaca <b>10 kali</b> tasbih.</li>
+        <li>Setelah bangun dari sujud kedua (sebelum rakaat berikutnya), membaca <b>10 kali</b> tasbih.</li>
+      </ol>
+      <p>Total setiap rakaat: <b>75 kali</b> tasbih × 4 rakaat = <b>300 kali</b> tasbih.</p>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan Shalat Tasbih</h4>
+      <ul>
+        <li>Menghapus dosa-dosa, baik yang lama maupun baru</li>
+        <li>Menambah keimanan dan ketenangan hati</li>
+        <li>Memperoleh ampunan dan rahmat dari Allah ﷻ</li>
+      </ul>
+
+      <h4 class="text-success mt-3">📿 Bacaan Tasbih</h4>
+      <p class="arabic text-center">سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلّٰهِ وَلَا إِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ</p>
+      <p><i>Subḥānallāh, wal-ḥamdu lillāh, wa lā ilāha illallāh, wallāhu akbar.</i><br>
+      Artinya: Maha Suci Allah, segala puji bagi Allah, tiada tuhan selain Allah, dan Allah Maha Besar.</p>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" onclick="window.location.href='taubat.html'">Lanjut ➜ Shalat Taubat</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  document.querySelector('button.btn-success').addEventListener('click', () => {
+  const progresGhairu = JSON.parse(localStorage.getItem('progres_ghairu')) || {};
+  progresGhairu['tasbih'] = true;
+  localStorage.setItem('progres_ghairu', JSON.stringify(progresGhairu));
+  window.location.href = 'taubat.html';
+});
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Istisqa (Memohon Hujan) | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='Sunnah_muakkad.html'">← Kembali</button>
+    </div>
+    <h2 class="text-center mb-4 fw-bold text-success">💧 Shalat Istisqa (Memohon Hujan)</h2>
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        <b>Shalat Istisqa</b> adalah shalat sunnah yang dilakukan untuk 
+        <b>memohon turunnya hujan</b> kepada Allah ﷻ ketika terjadi kekeringan panjang.
+        Rasulullah ﷺ dan para sahabat pernah melaksanakan shalat ini di tanah lapang.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <p>
+        Dilaksanakan ketika terjadi kekeringan atau ketika hujan tidak turun dalam waktu lama.
+        Waktunya boleh dilakukan kapan saja (kecuali waktu-waktu terlarang shalat).
+      </p>
+
+      <h4 class="text-success mt-3">📍 Tata Cara Pelaksanaan</h4>
+      <ol>
+        <li>Disunnahkan dilakukan secara berjamaah di lapangan terbuka.</li>
+        <li>Shalat dua rakaat seperti shalat ‘Id: pada rakaat pertama 7 takbir, rakaat kedua 5 takbir.</li>
+        <li>Setelah shalat, khatib menyampaikan khutbah dua kali seperti khutbah ‘Id.</li>
+        <li>Dalam khutbah, dianjurkan memperbanyak istighfar dan doa agar hujan diturunkan.</li>
+      </ol>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Istisqa</h4>
+      <p class="arabic">أُصَلِّي سُنَّةَ الاِسْتِسْقَاءِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnatal istisqā’i rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah istisqa dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan</h4>
+      <ul>
+        <li>Bentuk permohonan langsung kepada Allah ﷻ atas rahmat dan rezeki-Nya.</li>
+        <li>Menumbuhkan rasa tawakal dan keimanan kepada kekuasaan Allah.</li>
+        <li>Menghapus dosa dan menambah keberkahan bumi.</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" id="nextBtn">Lanjut ➜ Shalat kusuf & khusuf</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      const progress = JSON.parse(localStorage.getItem('progres_muakkad')) || {};
+      progress['istisqa'] = true;
+      localStorage.setItem('progres_muakkad', JSON.stringify(progress));
+      window.location.href = 'kusuf.html';
+    });
+  </script>
+
+</body>
+</html>

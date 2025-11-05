@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ShalatKu | Synvera</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <style>
+    .text-center img {
+      width: 450px;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text-center">
+      <h1>Takbir</h1>
+      <img src="img/takbir.png" alt="Takbiratul Ihram">
+      <p>Takbiratul ihram adalah bacaan <strong>"Allahu Akbar"</strong> yang diucapkan pada awal salat dan merupakan salah satu rukun yang wajib dilakukan.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="home.html" class="btn btn-danger btn-sm">Kembali</a>
+    <button id="nextBtn" class="btn btn-primary btn-sm">Membaca Al-Fatihah</button>
+  </div>
+
+  <script>
+    const langkahSekarang = 'takbir';
+    const halamanTujuan = 'alfatihah.html'; 
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      const progres = JSON.parse(localStorage.getItem('progres_shalat')) || {};
+      progres[langkahSekarang] = true;
+      localStorage.setItem('progres_shalat', JSON.stringify(progres));
+      window.location.href = halamanTujuan;
+    });
+  </script>
+
+</body>
+</html>

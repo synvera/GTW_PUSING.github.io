@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>ShalatKu | Synvera</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <style>
+    .selesai {
+      background-color: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+    }
+    .reset-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .modal-content {
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .modal-header {
+      background: #28a745;
+      color: white;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .modal-footer .btn {
+      border-radius: 8px;
+    }
+
+    .kembali{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kembali button{
+      border-radius: 15px;
+      width: 35%;
+      height: 45px;
+      margin: 10px 0 0 15px ;
+      border: 1px solid black;
+      transition: 1s ease;
+    }
+
+    .kembali button:hover{
+      background-color: #333;
+      color: #fff;
+    }
+
+    .kembali button:active{
+      transform: scale(0.5);
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+    
+<div class="container mt-4">
+  <div class="text-center">
+    <section id="konten">
+      <h1 id="judul"></h1>
+    </section>
+    <h1>ShalatKu</h1>
+    <hr style="border:5px solid green">
+  </div>
+
+  <div class="penjelasan text-center mb-4">
+    <h5>Disini kalian bisa menyelesaikan 1 per 1 ya, mulai dari niat sampai dengan salam <br>  Jika sudah selesai, nanti ada tes untuk mengetahui seberapa paham kalian</h5>
+  </div>
+
+  <div class="list-group" id="daftarLangkah">
+    <a href="niat.html" class="list-group-item list-group-item-action" data-step="niat">Niat</a>
+    <a href="takbir.html" class="list-group-item list-group-item-action" data-step="takbir">Takbiratul Ihram</a>
+    <a href="alfatihah.html" class="list-group-item list-group-item-action" data-step="alfatihah">Membaca Surat Alfatihah</a>
+    <a href="rukuk.html" class="list-group-item list-group-item-action" data-step="rukuk">Rukuk</a>
+    <a href="itidal.html" class="list-group-item list-group-item-action" data-step="itidal">I'tidal</a>
+    <a href="sujud.html" class="list-group-item list-group-item-action" data-step="sujud">Sujud</a>
+    <a href="duduk.html" class="list-group-item list-group-item-action" data-step="duduk">Duduk Di Antara Dua Sujud</a>
+    <a href="tasyahud_akhir.html" class="list-group-item list-group-item-action" data-step="tasyahud_akhir">Tasyahud Akhir</a>
+    <a href="shalawat.html" class="list-group-item list-group-item-action" data-step="shalawat">Membaca Shalawat</a>
+    <a href="salam.html" class="list-group-item list-group-item-action" data-step="salam">Salam</a>
+  </div>
+
+  <div id="tesContainer" class="text-center mt-4" style="display:none;">
+    <button class="btn btn-success btn-lg" onclick="window.location.href='tes.html'">Tes</button>
+  </div>
+
+  <div class="reset-container">
+    <button id="resetBtn" class="btn btn-outline-danger mt-3">🔁 Reset Progress</button>
+  </div>
+</div>
+
+<div class="kembali">
+  <button onclick="window.location.href='../menu.html'">Kembali ke menu</button>
+</div>
+
+
+<div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resetModalLabel">Konfirmasi Reset</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Apakah kamu yakin ingin mengulang dari awal?<br>Semua progress belajar dan hasil tes akan dihapus.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger" id="confirmReset">Ya, Reset Sekarang</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="successLabel">✅ Reset Berhasil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p>Progress kamu sudah direset.<br>Selamat belajar kembali dari awal!</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-success" id="okBtn">Oke</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const nama = localStorage.getItem('nama_pengguna');
+
+    if (!nama) {
+      window.location.href = 'verifikasi1.html';
+    }
+
+    const judul = document.getElementById('judul');
+    const deskripsi = document.getElementById('deskripsi');
+
+    judul.textContent = `Halo, ${nama}!`;
+  const langkahShalat = [
+    "niat", "takbir", "alfatihah", "rukuk", "itidal",
+    "sujud", "duduk", "tasyahud_akhir", "shalawat", "salam"
+  ];
+
+  const daftar = document.getElementById('daftarLangkah');
+  const tesContainer = document.getElementById('tesContainer');
+  const resetBtn = document.getElementById('resetBtn');
+  const confirmReset = document.getElementById('confirmReset');
+  const okBtn = document.getElementById('okBtn');
+
+  const progres = JSON.parse(localStorage.getItem('progres_shalat')) || {};
+
+  daftar.querySelectorAll('.list-group-item').forEach(item => {
+    const step = item.getAttribute('data-step');
+    if (progres[step]) item.classList.add('selesai');
+  });
+
+  const semuaSelesai = langkahShalat.every(step => progres[step]);
+  if (semuaSelesai) tesContainer.style.display = 'block';
+
+  resetBtn.addEventListener('click', () => {
+    const modal = new bootstrap.Modal(document.getElementById('resetModal'));
+    modal.show();
+  });
+
+  confirmReset.addEventListener('click', () => {
+    localStorage.removeItem('progres_shalat');
+    localStorage.removeItem('hasil_tes_shalat');
+    daftar.querySelectorAll('.list-group-item').forEach(item => item.classList.remove('selesai'));
+    tesContainer.style.display = 'none';
+    bootstrap.Modal.getInstance(document.getElementById('resetModal')).hide();
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+  });
+  okBtn.addEventListener('click', () => {
+    bootstrap.Modal.getInstance(document.getElementById('successModal')).hide();
+    window.location.reload();
+  });
+</script>
+
+</body>
+</html>

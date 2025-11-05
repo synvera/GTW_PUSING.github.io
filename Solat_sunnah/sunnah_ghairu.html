@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Shalat Sunnah Ghairu Mu’akkad | Synvera</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    .selesai {
+      background-color: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+    }
+
+    .reset-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .modal-content {
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .modal-header {
+      background: #28a745;
+      color: white;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .modal-footer .btn {
+      border-radius: 8px;
+    }
+
+    .kembali {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kembali button {
+      border-radius: 15px;
+      width: 35%;
+      height: 45px;
+      margin: 10px 0 0 15px;
+      border: 1px solid black;
+      transition: 1s ease;
+    }
+
+    .kembali button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .kembali button:active {
+      transform: scale(0.9);
+      background-color: black;
+    }
+
+    .penjelasan h5 {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="text-center">
+    <h1>Shalat Sunnah Ghairu Mu’akkad</h1>
+    <hr style="border:5px solid green">
+  </div>
+
+  <div class="penjelasan text-center mb-4">
+    <h5>Shalat sunnah <strong>Ghairu Mu’akkad</strong> adalah shalat sunnah yang <em>tidak terlalu ditekankan</em> oleh Rasulullah ﷺ, namun tetap dianjurkan untuk dikerjakan sebagai bentuk ketaatan dan ibadah tambahan.<br>
+    Pelajari satu per satu jenisnya di bawah ini.</h5>
+  </div>
+
+  <div class="list-group" id="daftarGhairu">
+    <a href="duha.html" class="list-group-item list-group-item-action" data-step="duha">Shalat Dhuha</a>
+    <a href="tahiyatul_masjid.html" class="list-group-item list-group-item-action" data-step="tahiyatul">Shalat Tahiyatul Masjid</a>
+    <a href="tasbih.html" class="list-group-item list-group-item-action" data-step="tasbih">Shalat Tasbih</a>
+    <a href="taubat.html" class="list-group-item list-group-item-action" data-step="taubat">Shalat Taubat</a>
+    <a href="istikharah.html" class="list-group-item list-group-item-action" data-step="istikharah">Shalat Istikharah</a>
+    <a href="hajat.html" class="list-group-item list-group-item-action" data-step="hajat">Shalat Hajat</a>
+  </div>
+
+  <div class="reset-container">
+    <button id="resetBtn" class="btn btn-outline-danger mt-3">Reset Progress</button>
+  </div>
+</div>
+
+<div class="kembali">
+  <button onclick="window.location.href='home.html'">Kembali</button>
+</div>
+<div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resetModalLabel">Konfirmasi Reset</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Yakin ingin mereset semua progress shalat sunnah Ghairu Mu’akkad?<br>Semua data yang tersimpan akan dihapus.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger" id="confirmReset">Ya, Reset Sekarang</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="successLabel">Reset Berhasil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p>Progress kamu sudah direset.<br>Selamat belajar kembali!</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-success" id="okBtn">Oke</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const daftar = document.getElementById('daftarGhairu');
+  const resetBtn = document.getElementById('resetBtn');
+  const confirmReset = document.getElementById('confirmReset');
+  const okBtn = document.getElementById('okBtn');
+
+  const progresGhairu = JSON.parse(localStorage.getItem('progres_ghairu')) || {};
+  daftar.querySelectorAll('.list-group-item').forEach(item => {
+    const step = item.getAttribute('data-step');
+    if (progresGhairu[step]) item.classList.add('selesai');
+  });
+  resetBtn.addEventListener('click', () => {
+    const modal = new bootstrap.Modal(document.getElementById('resetModal'));
+    modal.show();
+  });
+  confirmReset.addEventListener('click', () => {
+    localStorage.removeItem('progres_ghairu');
+    daftar.querySelectorAll('.list-group-item').forEach(item => item.classList.remove('selesai'));
+
+    bootstrap.Modal.getInstance(document.getElementById('resetModal')).hide();
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+  });
+  okBtn.addEventListener('click', () => {
+    bootstrap.Modal.getInstance(document.getElementById('successModal')).hide();
+    window.location.reload();
+  });
+</script>
+
+</body>
+</html>

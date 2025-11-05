@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShalatKu | Synvera</title>
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+  <div class="badan">
+    <section id="konten">
+      <h1 id="judul"></h1>
+      <p id="deskripsi"></p>
+    </section>
+
+    <div class="hero">
+      <h1>ShalatKu | Synvera</h1>
+      <p>Anda mau belajar yang mana?</p>
+      <div class="solat">
+        <button onclick="window.location.href='Solat_Fardu/home.html'">Solat Fardu</button>
+        <button onclick="window.location.href='Solat_sunnah/home.html'">Solat Sunnah</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const nama = localStorage.getItem('nama_pengguna');
+    if (!nama) {
+      window.location.href = 'verifikasi1.html';
+    }
+    const judul = document.getElementById('judul');
+    const deskripsi = document.getElementById('deskripsi');
+    judul.textContent = `Halo, ${nama}`;
+    deskripsi.textContent = "Selamat datang di ShalatKu. Silakan pilih jenis shalat yang ingin kamu pelajari di bawah ini.";
+  </script>
+</body>
+</html>

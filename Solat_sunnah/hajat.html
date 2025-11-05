@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Hajat | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='sunnah_ghairu.html'">← Kembali</button>
+    </div>
+    <h2 class="text-center mb-4 fw-bold text-success">🙏 Shalat Hajat</h2>
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        <b>Shalat Hajat</b> adalah shalat sunnah dua rakaat atau lebih yang dilakukan untuk memohon pertolongan, 
+        kemudahan, atau terpenuhinya suatu keperluan kepada Allah ﷻ.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <ul>
+        <li>Dapat dilakukan kapan saja, kecuali pada waktu terlarang untuk shalat.</li>
+        <li>Sebaiknya dilakukan pada malam hari agar lebih khusyuk dan tenang.</li>
+      </ul>
+
+      <h4 class="text-success mt-3">📿 Jumlah Rakaat</h4>
+      <p>
+        Dikerjakan minimal <b>2 rakaat</b>, boleh juga 4, 6, atau 12 rakaat, dengan salam setiap dua rakaat.
+      </p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Hajat</h4>
+      <p class="arabic text-center">أُصَلِّي سُنَّةَ الْحَاجَةِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnatal-ḥājati rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah hajat dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🌟 Tata Cara Pelaksanaan</h4>
+      <ul>
+        <li>Niat shalat hajat dan shalat dua rakaat seperti biasa.</li>
+        <li>Setelah salam, baca doa memohon pertolongan dan hajat kepada Allah dengan penuh keyakinan.</li>
+        <li>Boleh dilakukan berulang kali sesuai kebutuhan dan niat yang baik.</li>
+      </ul>
+
+      <h4 class="text-success mt-3">🤲 Doa Setelah Shalat Hajat</h4>
+      <p class="arabic text-center">
+        لَا إِلٰهَ إِلَّا اللّٰهُ الْحَلِيمُ الْكَرِيمُ، سُبْحَانَ اللّٰهِ رَبِّ الْعَرْشِ الْعَظِيمِ، 
+        الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ...
+      </p>
+      <p><i>Lā ilāha illallāhul ḥalīmul karīm, subḥānallāhi rabbil ‘arsyil ‘aẓīm, 
+      al-ḥamdu lillāhi rabbil ‘ālamīn...</i><br>
+      Artinya: Tiada Tuhan selain Allah Yang Maha Lembut lagi Maha Pemurah, Mahasuci Allah Tuhan Pemilik ‘Arsy yang agung, segala puji bagi Allah Tuhan seluruh alam.</p>
+
+      <h4 class="text-success mt-3">🌸 Keutamaan Shalat Hajat</h4>
+      <ul>
+        <li>Doa lebih mudah dikabulkan oleh Allah ﷻ.</li>
+        <li>Mendatangkan ketenangan dan harapan baru.</li>
+        <li>Bentuk kepasrahan dan tawakal dalam menghadapi kesulitan.</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" onclick="window.location.href='sunnah_ghairu.html'">Selesai ✓ Kembali ke Daftar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+              document.querySelector('button.btn-success').addEventListener('click', () => {
+  const progresGhairu = JSON.parse(localStorage.getItem('progres_ghairu')) || {};
+  progresGhairu['hajat'] = true;
+  localStorage.setItem('progres_ghairu', JSON.stringify(progresGhairu));
+  window.location.href = 'sunnah_ghairu.html';
+});
+  </script>
+
+</body>
+</html>

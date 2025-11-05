@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Sunnah Witir | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='Sunnah_muakkad.html'">← Kembali</button>
+    </div>
+    <h2 class="text-center mb-4 fw-bold text-success">Shalat Sunnah Witir</h2>
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        Shalat <b>Witir</b> adalah shalat sunnah yang dikerjakan pada malam hari dengan jumlah rakaat ganjil 
+        (1, 3, 5, 7, 9, atau 11 rakaat). Witir menjadi <b>penutup shalat malam</b> dan sangat dianjurkan oleh Rasulullah ﷺ.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <p>
+        Dilakukan setelah shalat Isya hingga terbit fajar. 
+        Waktu paling utama adalah di akhir malam sebelum Subuh, bagi yang terbiasa bangun malam.
+      </p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Witir</h4>
+      <p class="arabic">أُصَلِّي سُنَّةَ الْوِتْرِ رَكْعَةً لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnatal witri rak‘atan lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah Witir satu rakaat karena Allah Ta‘ala.</p>
+
+      <p>Jika dikerjakan lebih dari satu rakaat (misal 3 rakaat), boleh dua cara:</p>
+      <ul>
+        <li>2 rakaat salam, lalu 1 rakaat lagi salam (disunnahkan).</li>
+        <li>3 rakaat sekaligus dengan satu salam (boleh, tapi jangan menyerupai Maghrib).</li>
+      </ul>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan</h4>
+      <ul>
+        <li>Shalat yang sangat dicintai Rasulullah ﷺ.</li>
+        <li>Menjadi penutup ibadah malam.</li>
+        <li>Menambah pahala dan kedekatan dengan Allah.</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" id="nextBtn">Lanjut ➜ Shalat ‘Id</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      const progress = JSON.parse(localStorage.getItem('progres_muakkad')) || {};
+      progress['witir'] = true;
+      localStorage.setItem('progres_muakkad', JSON.stringify(progress));
+      window.location.href = 'id.html';
+    });
+  </script>
+
+</body>
+</html>

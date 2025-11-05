@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Tahiyatul Masjid | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='sunnah_ghairu.html'">← Kembali</button>
+    </div>
+
+    <h2 class="text-center mb-4 fw-bold text-success">🕌 Shalat Tahiyatul Masjid</h2>
+
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        Shalat <b>Tahiyatul Masjid</b> adalah shalat sunnah dua rakaat yang dilakukan 
+        ketika seseorang <b>memasuki masjid</b>, sebelum duduk. 
+        Tujuannya sebagai bentuk penghormatan kepada rumah Allah ﷻ.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <ul>
+        <li>Dilakukan setiap kali memasuki masjid, kapan pun waktunya</li>
+        <li>Tidak dilakukan jika waktu terlarang (seperti setelah Subuh atau setelah Asar)</li>
+        <li>Tidak perlu dilakukan jika langsung shalat wajib atau sunnah lain (misalnya berjamaah)</li>
+      </ul>
+
+      <h4 class="text-success mt-3">📿 Jumlah Rakaat</h4>
+      <p>Shalat Tahiyatul Masjid dikerjakan sebanyak <b>2 rakaat</b>, dengan satu kali salam.</p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Tahiyatul Masjid</h4>
+      <p class="arabic text-center">أُصَلِّي سُنَّةَ تَحِيَّةِ الْمَسْجِدِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnata taḥiyyatil-masjidi rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah Tahiyatul Masjid dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan Shalat Tahiyatul Masjid</h4>
+      <ul>
+        <li>Menunjukkan adab dan penghormatan kepada masjid, rumah Allah ﷻ</li>
+        <li>Mendapat pahala besar atas kesopanan di hadapan Allah</li>
+        <li>Menghapus dosa dan meningkatkan keutamaan amal harian</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" onclick="window.location.href='tasbih.html'">Lanjut ➜ Shalat Tasbih</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('button.btn-success').addEventListener('click', () => {
+  const progresGhairu = JSON.parse(localStorage.getItem('progres_ghairu')) || {};
+  progresGhairu['tahiyatul'] = true;
+  localStorage.setItem('progres_ghairu', JSON.stringify(progresGhairu));
+  window.location.href = 'tasbih.html';
+});
+
+  </script>
+
+</body>
+</html>

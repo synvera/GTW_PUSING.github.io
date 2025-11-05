@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ShalatKu | Synvera</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+Arabic:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  html, body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f9fafb;
+  }
+
+  .text-center li {
+    text-align: left;
+    list-style: number;
+  }
+
+  .text-center h2 {
+    text-align: left;
+    font-family: "Noto Sans Arabic", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .text-center h3 {
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+  }
+
+  .faq-container {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .faq {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .faq-header {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-header:hover {
+    background: #f0f0f0;
+  }
+
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    color: #555;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .faq.active .faq-content {
+    max-height: 1000px;
+    padding: 15px 20px;
+  }
+
+  .icon {
+    transition: transform 0.3s;
+  }
+
+  .faq.active .icon {
+    transform: rotate(45deg);
+  }
+
+  .subjudul {
+    font-weight: 600;
+    color: #007bff;
+    margin-top: 10px;
+  }
+
+  .arabic {
+    font-family: "Noto Sans Arabic", sans-serif;
+    font-size: 20px;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 5px;
+    color: #222;
+  }
+
+  .latin {
+    font-style: italic;
+    color: #444;
+  }
+
+  .arti {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+</style>
+
+<body>
+
+<div class="container mt-4">
+  <div class="text-center">
+    <h1>Niat</h1>
+    <img src="img/niat.png" class="img-fluid" alt="niat shalat"/>
+    <p class="mt-3">
+      Niat merupakan salah satu rukun salat yang hukumnya wajib dan harus dilakukan di dalam hati,
+      tepatnya bersamaan dengan saat mengucapkan takbiratul ihram ("Allahu Akbar").
+    </p>
+  </div>
+
+  <div class="faq-container">
+
+    <div class="faq">
+      <div class="faq-header">
+        <span>Sholat Subuh (2 rakaat)</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-content">
+        <div class="subjudul">🔹 Niat Sholat Subuh Sendiri</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhas shubhi rak‘ataini mustaqbilal qiblati adā’an lillāhi ta‘ālā.</div>
+        <div class="arti">Aku niat shalat fardhu Subuh dua rakaat menghadap kiblat karena Allah Ta‘ala.</div>
+
+        <div class="subjudul">🔹 Sebagai Imam</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ إِمَامًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhas shubhi rak‘ataini imāman lillāhi ta‘ālā.</div>
+        <div class="arti">Aku niat shalat fardhu Subuh dua rakaat sebagai imam karena Allah Ta‘ala.</div>
+
+        <div class="subjudul">🔹 Sebagai Makmum</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مَأْمُومًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhas shubhi rak‘ataini ma’mūman lillāhi ta‘ālā.</div>
+        <div class="arti">Aku niat shalat fardhu Subuh dua rakaat sebagai makmum karena Allah Ta‘ala.</div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-header">
+        <span>Sholat Dzuhur (4 rakaat)</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-content">
+        <div class="subjudul">🔹 Sendiri</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhazh zhuhri arba‘a raka‘ātin mustaqbilal qiblati adā’an lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Imam</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ إِمَامًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhazh zhuhri arba‘a raka‘ātin imāman lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Makmum</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مَأْمُومًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhazh zhuhri arba‘a raka‘ātin ma’mūman lillāhi ta‘ālā.</div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-header">
+        <span>Sholat Ashar (4 rakaat)</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-content">
+        <div class="subjudul">🔹 Sendiri</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعَصْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ashri arba‘a raka‘ātin mustaqbilal qiblati adā’an lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Imam</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعَصْرِ أَرْبَعَ رَكَعَاتٍ إِمَامًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ashri arba‘a raka‘ātin imāman lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Makmum</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعَصْرِ أَرْبَعَ رَكَعَاتٍ مَأْمُومًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ashri arba‘a raka‘ātin ma’mūman lillāhi ta‘ālā.</div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-header">
+        <span>Sholat Maghrib (3 rakaat)</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-content">
+        <div class="subjudul">🔹 Sendiri</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْمَغْرِبِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal maghribi thalātha raka‘ātin mustaqbilal qiblati adā’an lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Imam</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْمَغْرِبِ ثَلَاثَ رَكَعَاتٍ إِمَامًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal maghribi thalātha raka‘ātin imāman lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Makmum</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْمَغْرِبِ ثَلَاثَ رَكَعَاتٍ مَأْمُومًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal maghribi thalātha raka‘ātin ma’mūman lillāhi ta‘ālā.</div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-header">
+        <span>Sholat Isya (4 rakaat)</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-content">
+        <div class="subjudul">🔹 Sendiri</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعِشَاءِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ishā’a arba‘a raka‘ātin mustaqbilal qiblati adā’an lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Imam</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعِشَاءِ أَرْبَعَ رَكَعَاتٍ إِمَامًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ishā’a arba‘a raka‘ātin imāman lillāhi ta‘ālā.</div>
+
+        <div class="subjudul">🔹 Makmum</div>
+        <div class="arabic">نَوَيْتُ أَنْ أُصَلِّيَ فَرْضَ الْعِشَاءِ أَرْبَعَ رَكَعَاتٍ مَأْمُومًا لِلّٰهِ تَعَالَى</div>
+        <div class="latin">Nawaitu an usholliya fardhal ‘ishā’a arba‘a raka‘ātin ma’mūman lillāhi ta‘ālā.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-3 mb-4">
+    <a href="home.html" class="btn btn-danger btn-sm">Kembali</a>
+    <a href="#" id="nextBtn" class="btn btn-primary btn-sm float-end">Takbir</a>
+  </div>
+</div>
+
+<script>
+  const faqs = document.querySelectorAll('.faq');
+  faqs.forEach(faq => {
+    faq.querySelector('.faq-header').addEventListener('click', () => {
+      faq.classList.toggle('active');
+    });
+  });
+
+  const langkahSekarang = 'niat';
+  const halamanTujuan = 'takbir.html';
+
+  document.getElementById('nextBtn').addEventListener('click', e => {
+    e.preventDefault();
+    const progres = JSON.parse(localStorage.getItem('progres_shalat')) || {};
+    progres[langkahSekarang] = true;
+    localStorage.setItem('progres_shalat', JSON.stringify(progres));
+    window.location.href = halamanTujuan;
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Panduan Shalat Lengkap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  .text-center img {
+      width: 450px;
+    }
+  .text-center p{
+    font-family: "Noto Sans Arabic", sans-serif;
+    font-size: 25px;
+  }
+
+  .text-center h5{
+    font-size: 15px;
+  }
+</style>
+<body>
+  
+<div class="container">
+    <div class="text-center">
+        <h1>Membaca Al-Fatihah</h1>
+        <img src="img/solat.png"/>
+          <p>
+            بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ<br>
+            الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+            الرَّحْمَـٰنِ الرَّحِيمِ<br>
+            مَالِكِ يَوْمِ الدِّينِ<br>
+            إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+            اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+            صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ<br>
+            غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+          </p>
+          <h6>
+            latinnya : <br>
+            Bismillāhir-raḥmānir-raḥīm <br>
+            Al-ḥamdu lillāhi rabbil-‘ālamīn <br>
+            Ar-raḥmānir-raḥīm <br>
+            Māliki yaumid-dīn <br>
+            Iyyāka na‘budu wa iyyāka nasta‘īn <br>
+            Ihdinaṣ-ṣirāṭal-mustaqīm <br>
+            Ṣirāṭallażīna an‘amta ‘alaihim ghairil-maghdhūbi ‘alaihim walad-dhāllīn
+          </h6>
+          <h5>
+            Artinya : <br>
+            Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. <br>
+Segala puji bagi Allah, Tuhan seluruh alam. <br>
+Yang Maha Pengasih, Maha Penyayang. <br>
+Yang Menguasai hari pembalasan. <br>
+Hanya kepada-Mu kami menyembah dan hanya kepada-Mu kami memohon pertolongan. <br>
+Tunjukilah kami jalan yang lurus, <br>
+(yaitu) jalan orang-orang yang telah Engkau beri nikmat, bukan jalan mereka yang dimurkai, dan bukan pula jalan mereka yang sesat. <br>
+          </h5>
+    </div>
+    <!-- Hover added -->
+    <a href="home.html" class="btn btn-danger btn-sm">Kembali</a>
+    <a href="#" id="nextBtn" class="btn btn-primary btn-sm float-end">Rukuk</a>
+    
+</div>
+
+</body>
+<script>
+  const langkahSekarang = 'alfatihah';
+  const halamanTujuan = 'rukuk.html';
+
+  document.getElementById('nextBtn').addEventListener('click', e => {
+    e.preventDefault();
+
+    // Ambil progres lama
+    const progres = JSON.parse(localStorage.getItem('progres_shalat')) || {};
+
+    // Tandai langkah sekarang sudah selesai
+    progres[langkahSekarang] = true;
+
+    // Simpan lagi
+    localStorage.setItem('progres_shalat', JSON.stringify(progres));
+
+    // Pindah ke halaman berikut
+    window.location.href = halamanTujuan;
+  });
+</script>
+</html>

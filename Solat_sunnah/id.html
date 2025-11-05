@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat ‘Id (Idul Fitri & Idul Adha) | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='Sunnah_muakkad.html'">← Kembali</button>
+    </div>
+    <h2 class="text-center mb-4 fw-bold text-success">Shalat ‘Id (Idul Fitri & Idul Adha)</h2>
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        Shalat <b>‘Id</b> adalah shalat sunnah dua rakaat yang dikerjakan pada hari raya <b>Idul Fitri</b> (1 Syawal)
+        dan <b>Idul Adha</b> (10 Zulhijjah). Shalat ini dilakukan secara berjamaah dan merupakan syiar besar Islam.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <ul>
+        <li><b>Idul Fitri</b>: Setelah matahari terbit hingga sebelum waktu Zuhur.</li>
+        <li><b>Idul Adha</b>: Setelah matahari agak tinggi, agar memberi waktu untuk penyembelihan kurban.</li>
+      </ul>
+
+      <h4 class="text-success mt-3">🕋 Tata Cara Shalat ‘Id</h4>
+      <p>Shalat ini terdiri dari 2 rakaat, dengan tambahan takbir:</p>
+      <ul>
+        <li><b>Rakaat pertama:</b> Takbir 7 kali (tidak termasuk takbiratul ihram)</li>
+        <li><b>Rakaat kedua:</b> Takbir 5 kali</li>
+      </ul>
+
+      <p>Setelah shalat, imam menyampaikan <b>khutbah ‘Id</b> yang berisi nasihat dan pesan ketaatan.</p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat ‘Idul Fitri</h4>
+      <p class="arabic">أُصَلِّي سُنَّةَ عِيدِ الْفِطْرِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnata ‘īdil fiṭri rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah Idul Fitri dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat ‘Idul Adha</h4>
+      <p class="arabic">أُصَلِّي سُنَّةَ عِيدِ الأَضْحَى رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnata ‘īdil aḍḥā rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah Idul Adha dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan</h4>
+      <ul>
+        <li>Menjadi bentuk syukur atas nikmat Allah.</li>
+        <li>Menumbuhkan kebersamaan dan persaudaraan antar umat Islam.</li>
+        <li>Mendapat pahala besar sebagai ibadah syiar Islam.</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success" id="nextBtn">Lanjut ➜ Shalat Tarawih</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      const progress = JSON.parse(localStorage.getItem('progres_muakkad')) || {};
+      progress['id'] = true;
+      localStorage.setItem('progres_muakkad', JSON.stringify(progress));
+      window.location.href = 'tarawih.html';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalat Sunnah Rawatib | ShalatKu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <div class="mb-3">
+      <button class="btn btn-outline-success" onclick="window.location.href='Sunnah_Muakkad.html'">← Kembali</button>
+    </div>
+
+    <h2 class="text-center mb-4 fw-bold text-success">Shalat Sunnah Rawatib</h2>
+
+    <div class="card shadow-sm p-4">
+      <h4 class="text-success">📘 Pengertian</h4>
+      <p>
+        Shalat sunnah <b>Rawatib</b> adalah shalat sunnah yang dikerjakan 
+        <b>sebelum atau sesudah shalat wajib</b> tertentu. 
+        Rasulullah ﷺ sangat menganjurkan umatnya untuk mengerjakannya secara rutin.
+      </p>
+
+      <h4 class="text-success mt-3">🕓 Waktu Pelaksanaan</h4>
+      <ul>
+        <li>2 rakaat <b>sebelum Subuh</b> (paling utama)</li>
+        <li>2 rakaat <b>sebelum dan sesudah Zuhur</b></li>
+        <li>2 rakaat <b>sesudah Maghrib</b></li>
+        <li>2 rakaat <b>sesudah Isya</b></li>
+      </ul>
+
+      <h4 class="text-success mt-3">🕋 Niat Shalat Rawatib</h4>
+      <p><b>1. Niat Qabliyah Subuh:</b></p>
+      <p class="arabic">أُصَلِّي سُنَّةَ الفَجْرِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnatal fajri rak‘ataini lillāhi ta‘ālā.</i><br>Artinya: Aku niat salat sunnah fajar dua rakaat karena Allah Ta‘ala.</p>
+
+      <p><b>2. Niat Qabliyah / Ba’diyah lainnya:</b></p>
+      <p class="arabic">أُصَلِّي سُنَّةَ الظُّهْرِ (قَبْلِيَّةً / بَعْدِيَّةً) رَكْعَتَيْنِ لِلّٰهِ تَعَالَى</p>
+      <p><i>Ushallī sunnata ẓuḥri (qabliyatan / ba‘diyatan) rak‘ataini lillāhi ta‘ālā.</i><br>
+      Artinya: Aku niat salat sunnah Zuhur (sebelum/sesudah) dua rakaat karena Allah Ta‘ala.</p>
+
+      <h4 class="text-success mt-3">🌟 Keutamaan</h4>
+      <ul>
+        <li>Dibangun rumah di surga bagi yang menjaga Rawatib (HR. Muslim)</li>
+        <li>Menyempurnakan kekurangan dalam salat wajib</li>
+        <li>Mendapat cinta dan ampunan Allah</li>
+      </ul>
+
+      <div class="text-center mt-4">
+        <button id="nextBtn" class="btn btn-success">Lanjut ➜ Shalat Witir</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    const progres = JSON.parse(localStorage.getItem('progres_muakkad')) || {};
+    progres['rawatib'] = true;
+    localStorage.setItem('progres_muakkad', JSON.stringify(progres));
+    window.location.href = 'witir.html';
+  });
+</script>
+
+</body>
+</html>

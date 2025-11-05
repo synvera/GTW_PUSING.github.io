@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ShalatKu | Synvera</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  .text-center img{
+    width: 450px;
+  }
+</style>
+<body>
+  
+<div class="container">
+    <div class="text-center">
+        <h1>Duduk diantara dua sujud</h1>
+        <img src="img/duduk diantara dua sujud.png"/>
+        <p>
+            اللّهُمَّ اغْفِرْلِيْ وَارْحَمْنِيْ وَاجْبُرْنِيْ وَاهْدِنِيْ وَارْزُقْنِيْ 
+
+            <br/>
+            (Ya Allah ampunilah aku, kasihanilah aku, cukupilah aku, tunjukilah aku, dan berilah rezeki kepadaku).
+        </p>
+    </div>
+</div>
+    <div class="mt-3 mb-4">
+    <a href="home.html" class="btn btn-danger btn-sm">Kembali</a>
+    <a href="#" id="nextBtn" class="btn btn-primary btn-sm float-end">Tasyahud akhir</a>
+  </div>
+</div>
+
+<script>
+  const faqs = document.querySelectorAll('.faq');
+  faqs.forEach(faq => {
+    faq.querySelector('.faq-header').addEventListener('click', () => {
+      faq.classList.toggle('active');
+    });
+  });
+
+  const langkahSekarang = 'duduk';
+  const halamanTujuan = 'tasyahud_akhir.html';
+
+  document.getElementById('nextBtn').addEventListener('click', e => {
+    e.preventDefault();
+    const progres = JSON.parse(localStorage.getItem('progres_shalat')) || {};
+    progres[langkahSekarang] = true;
+    localStorage.setItem('progres_shalat', JSON.stringify(progres));
+    window.location.href = halamanTujuan;
+  });
+</script>
+</body>
+</html>
